@@ -1,0 +1,104 @@
+# Python
+*.py[cod]
+__pycache__/
+*.so
+
+# Django
+*.log
+*.pot
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Environment Variables
+.env
+myenv
+.myenv
+
+# Virtual Environments
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+virtualenv/
+stripe_1.19.4_windows_x86_64/
+
+# Static and Media Files
+staticfiles/
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Database Backups
+*.bak
+*.dump
+
+# Test Coverage and Cache
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+
+# Flask
+instance/
+.webassets-cache
+
+# Scrapy
+.scrapy
+
+# Sphinx Documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Celery
+celerybeat-schedule
+
+# SageMath
+*.sage.py
+
+# mkdocs Documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre Type Checker
+.pyre/
+
+# pytype Static Type Analyzer
+.pytype/
+
+# Cython Debug Symbols
+cython_debug/
