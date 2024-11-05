@@ -1,4 +1,6 @@
-from urllib import request
+from urllib import (
+    request,  # is used to handle HTTP requests, such as downloading files from a URL.
+)
 
 from django import forms
 from django.core.files.base import ContentFile
