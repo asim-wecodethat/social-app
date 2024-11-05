@@ -29,12 +29,17 @@ class ImageCreateForm(forms.ModelForm):
 
     def save(self, force_insert=False, force_update=False, commit=True):
         image = super().save(commit=False)
+        self.process_image(image)
+        if commit:
+            image.save()
+        return image
+
+    def process_image(self, image):
+        """Process the image URL and save the image file."""
         image_url = self.cleaned_data["url"]
         name = slugify(image.title)
         extension = image_url.rsplit(".", 1)[1].lower()
         image_name = f"{name}.{extension}"
+
         response = request.urlopen(image_url)
         image.image.save(image_name, ContentFile(response.read()), save=False)
-        if commit:
-            image.save()
-        return image
