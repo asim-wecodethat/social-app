@@ -18,13 +18,19 @@ User = get_user_model()  # noqa
 
 @login_required
 def dashboard(request):
-    actions = Action.objects.exclude(user=request.user)
+    actions = (
+        Action.objects.exclude(user=request.user)
+        .select_related("user", "user__profile")
+        .prefetch_related("target")[:10]
+    )
+
     following_ids = request.user.following.values_list("id", flat=True)
 
     if following_ids:
         actions = actions.filter(user_id__in=following_ids)
 
     actions = actions[:10]
+
     return render(
         request, "account/dashboard.html", {"section": "dashboard", "actions": actions}
     )
